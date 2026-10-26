@@ -1,0 +1,26 @@
+!.gitignore
+
+# Local-only rollback copies
+/backups/
+/backups/**
+
+# Devpost private learner context
+/devpost/learner-profile.md
+
+# Internal planning and extraction notes should stay out of the public repo
+/devpost/SOURCE_EXTRACTION_NOTES.md
+/devpost/SUBMISSION_READINESS.md
+/devpost/prd-planning-baseline-2026-10-13.md
+/devpost/spec-planning-baseline-2026-10-13.md
+/devpost/app-map.html
+
+# Local credentials (allow a secret-free example)
+.env
+.env.*
+!.env.example
+
+# Node and editor-generated files
+node_modules/
+.vscode/
+.DS_Store
+Thumbs.db

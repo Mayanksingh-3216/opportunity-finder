@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#102b47">
+  <meta name="description" content="Opportunity Finder helps explore education, government recruitment, private careers, apprenticeships and startup support based on your profile.">
+  <title>Opportunity Finder — Profile & Education Discovery</title>
+  
+<link rel="stylesheet" href="assets/css/styles.css">
+
+  <script src="assets/js/data/01-opportunity-data.js"></script>
+<script src="assets/js/data/02-jobs-data-additions.js"></script>
+
+<script src="assets/js/data/03-institution-data.js"></script>
+
+  <script src="assets/js/data/04-education-transition-data.js"></script>
+  
+
+
+
+
+</head>
+<body>
+  <header class="topbar">
+    <a href="#top" class="brand" aria-label="Opportunity Finder home">
+      <span class="brand-icon brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 52 52" focusable="false" aria-hidden="true">
+          <path d="M26 4.3 45.2 15v21.9L26 47.8 6.8 36.9V15L26 4.3Z" fill="#ffffff" fill-opacity=".12" stroke="#ffffff" stroke-opacity=".55" stroke-width="1.1"/>
+          <path d="M8.5 20.2 26 11l17.5 9.2L26 29.5 8.5 20.2Z" fill="#ffffff"/>
+          <path d="M15 24.1v8.3c0 3.1 5 6.2 11 6.2s11-3.1 11-6.2v-8.3l-11 5.8-11-5.8Z" fill="#f0fbff"/>
+          <path d="M42.8 20.7v10.2" stroke="#ffffff" stroke-width="2.1" stroke-linecap="round"/>
+          <circle cx="42.8" cy="33.5" r="2.4" fill="#ffcd63" stroke="#fff" stroke-width="1"/>
+          <path d="M20 15.7h12" stroke="#b9e7ff" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="brand-copy"><strong>Opportunity Finder</strong><small>Your Future. Our Guidance.</small></span>
+    </a>
+    <button type="button" class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Open navigation" aria-expanded="false" aria-controls="primaryNav">
+      <svg viewBox="0 0 24 24" width="21" height="21" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <nav class="primary-nav" id="primaryNav" aria-label="Main navigation">
+      <button type="button" class="nav-link is-active" data-main-nav="home">Home</button>
+      <button type="button" class="nav-link" data-main-nav="education">Education</button>
+      <button type="button" class="nav-link" data-main-nav="government">Government Jobs</button>
+      <button type="button" class="nav-link" data-main-nav="private">Private Careers</button>
+      <button type="button" class="nav-link" data-main-nav="schemes">Schemes</button>
+      <button type="button" class="nav-link" data-main-nav="roadmap">Career Roadmap</button>
+    </nav>
+    <div class="topbar-right">
+      <label class="language-control"><span class="sr-only">Language</span><select id="languageSelect" aria-label="Choose language"><option value="en">English</option><option value="hi">हिंदी</option><option value="gu">ગુજરાતી</option><option value="bn">বাংলা</option><option value="mr">मराठी</option><option value="ta">தமிழ்</option><option value="te">తెలుగు</option><option value="kn">ಕನ್ನಡ</option><option value="ml">മലയാളം</option><option value="pa">ਪੰਜਾਬੀ</option><option value="ur">اردو</option><option value="or">ଓଡ଼ିଆ</option><option value="as">অসমীয়া</option></select></label>
+      <span class="prototype-badge"><i></i> Interactive prototype</span>
+      <button type="button" id="clearSaved" class="text-btn" title="Clear saved profile" aria-label="Clear saved profile">Clear saved profile</button>
+    </div>
+  </header>
+
+  <main id="top" class="page-wrap">
+    <section class="intro-hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> PERSONALIZED OPPORTUNITY DISCOVERY</p>
+        <h1>Find the next step<br><em>that fits you.</em></h1>
+        <p class="hero-subtitle">Enter your details once. Use your profile to explore education opportunities, jobs, careers and startup support. Government Schemes & Services is now available in its own section.</p>
+        <div class="hero-points"><span>✓ Adaptive form</span><span>✓ Education-specific discovery</span><span>✓ Official links shown</span></div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="hero-art-glow glow-one"></div><div class="hero-art-glow glow-two"></div>
+        <svg class="hero-scene" viewBox="0 0 430 300" role="presentation" focusable="false">
+          <defs>
+            <linearGradient id="heroSky" x1="30" y1="0" x2="370" y2="300" gradientUnits="userSpaceOnUse"><stop stop-color="#b7eaff" stop-opacity=".7"/><stop offset="1" stop-color="#ffffff" stop-opacity=".03"/></linearGradient>
+            <linearGradient id="heroHill" x1="20" y1="180" x2="280" y2="300" gradientUnits="userSpaceOnUse"><stop stop-color="#8ee2c5"/><stop offset="1" stop-color="#1d9e91"/></linearGradient>
+            <linearGradient id="heroBlue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2f8cff"/><stop offset="1" stop-color="#1554d5"/></linearGradient>
+            <linearGradient id="heroTeal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#19c39b"/><stop offset="1" stop-color="#0b8c79"/></linearGradient>
+            <filter id="heroSoftShadow" x="-30%" y="-30%" width="160%" height="180%"><feDropShadow dx="0" dy="7" stdDeviation="7" flood-color="#052b55" flood-opacity=".2"/></filter>
+          </defs>
+          <circle cx="250" cy="132" r="124" fill="url(#heroSky)"/>
+          <circle cx="313" cy="69" r="43" fill="#ffffff" opacity=".18"/>
+          <g fill="#ffffff" opacity=".75"><path d="M58 73c-1-10 7-18 17-18 7-14 29-12 33 4 11 0 17 7 17 15H58Z"/><path d="M259 35c-1-8 6-14 14-14 6-11 23-10 27 3 9 0 14 5 14 11h-55Z" opacity=".7"/></g>
+          <path d="M0 221c55-40 110-24 157-5 48 20 97-3 135-19 51-22 92 2 138 25v78H0Z" fill="url(#heroHill)" opacity=".85"/>
+          <path d="M0 252c62-28 104-24 151-1 52 25 96 19 137-3 49-26 89-20 143 7v45H0Z" fill="#0b837e" opacity=".47"/>
+          <path d="M46 300c51-55 88-61 115-46 30 17 20 28 51 46H46Z" fill="#def8ed" opacity=".6"/>
+          <!-- Friendly student, shown from behind -->
+          <g filter="url(#heroSoftShadow)" transform="translate(82 111)">
+            <path d="M36 91 28 151l-14 29h21l20-31 7-38Z" fill="#173c6c"/>
+            <path d="M65 92 78 150l12 29H70l-19-29-7-40Z" fill="#102e56"/>
+            <path d="M22 177h18l-3 8H10c-4 0-4-4-1-6l13-2ZM76 177h17l10 4c3 2 2 5-2 5H78Z" fill="#15345c"/>
+            <path d="M30 45c0-22 12-35 27-35 17 0 29 15 28 36l-5 21-41 1-9-23Z" fill="#1c293c"/>
+            <path d="M36 44c0-18 9-26 21-26 14 0 22 11 22 27v17c0 15-10 24-22 24S35 76 35 61Z" fill="#d78d63"/>
+            <path d="M32 45c2-25 17-37 32-34 14 2 23 15 21 29-6-4-9-10-12-16-8 9-22 13-41 12Z" fill="#18243a"/>
+            <path d="M28 75c7-11 18-15 29-15 13 0 23 5 30 16l8 57-65 5-14-44Z" fill="#1875d1"/>
+            <path d="M31 83 48 94l-4 33-22-5Z" fill="#0f4f9a"/>
+            <path d="M53 83c13 3 24 1 33-4l9 49-32 13-16-18Z" fill="#2a8df2"/>
+            <path d="M49 85c7 4 18 5 25 1" stroke="#8dd9ff" stroke-width="3" stroke-linecap="round"/>
+            <path d="M23 83 13 119 25 133l12-14-4-34Z" fill="#d78d63"/>
+            <path d="M85 84 97 111l-9 24-12-13 1-29Z" fill="#d78d63"/>
+            <path d="M39 121 54 132l18-10" stroke="#0d4d92" stroke-width="3" fill="none" stroke-linecap="round"/>
+          </g>
+          <!-- Direction signpost -->
+          <g transform="translate(246 40)" filter="url(#heroSoftShadow)">
+            <rect x="51" y="28" width="8" height="201" rx="4" fill="#9f6a3b"/>
+            <path d="M8 33h151l14 17-14 17H8Z" fill="url(#heroBlue)"/>
+            <path d="M8 81h136l14 17-14 17H8Z" fill="url(#heroTeal)"/>
+            <path d="M8 129h151l14 17-14 17H8Z" fill="#f4ac35"/>
+            <path d="M8 177h136l14 17-14 17H8Z" fill="#fff"/>
+            <g font-family="Inter, Arial, sans-serif" font-size="13" font-weight="800" fill="#fff"><text x="26" y="54">Education</text><text x="26" y="102">Jobs &amp; Careers</text><text x="26" y="150">Schemes</text></g>
+            <text x="26" y="199" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="800" fill="#24517d">Your Future</text>
+            <circle cx="155" cy="49" r="9" fill="#ffffff" opacity=".95"/><path d="m151 49 3 3 5-6" stroke="#1764de" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="140" cy="97" r="9" fill="#ffffff" opacity=".95"/><path d="m136 97 3 3 5-6" stroke="#0a977e" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="155" cy="145" r="9" fill="#ffffff" opacity=".95"/><path d="m151 145 3 3 5-6" stroke="#de8a18" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+        </svg>
+        <div class="art-chip chip-one">🎓 Your next step</div><div class="art-chip chip-two">✦ Goal → Roadmap</div>
+      </div>
+    </section>
+
+    <div class="progress-wrap" aria-label="Application progress">
+      <div class="progress-step active" data-progress="1"><span>1</span><b>Your details</b></div><div class="progress-connector"></div>
+      <div class="progress-step" data-progress="2"><span>2</span><b>Choose section</b></div><div class="progress-connector"></div>
+      <div class="progress-step" data-progress="3"><span>3</span><b>Education details</b></div><div class="progress-connector"></div>
+      <div class="progress-step" data-progress="4"><span>4</span><b>Opportunities</b></div>
+    </div>
+
+    <section id="profileStep" class="step-view">
+      <div class="section-title-row">
+        <div><p class="step-kicker">STEP 1 OF 4</p><h2>First, tell us about yourself</h2><p class="muted">Name is required. Other details are optional; more information can improve relevance.</p></div>
+        <span class="step-label">Personal profile</span>
+      </div>
+      
+<section class="goal-planner" aria-labelledby="goalPlannerTitle">
+        <div class="goal-planner-head">
+          <span class="goal-planner-icon" aria-hidden="true">✦</span>
+          <div class="goal-planner-copy">
+            <p class="step-kicker">YOUR PERSONAL ROADMAP</p>
+            <h3 id="goalPlannerTitle">What do you want to become?</h3>
+            <p>Type a career or goal. We’ll turn it into practical next steps based on your current education level.</p>
+          </div>
+          <span class="goal-planner-badge">Goal planner</span>
+        </div>
+        <form id="goalRoadmapForm" class="goal-planner-form">
+          <label class="goal-field" for="careerGoalInput">
+            <span>My goal <b>*</b></span>
+            <input id="careerGoalInput" name="careerGoal" type="text" maxlength="120" required autocomplete="off" placeholder="e.g. Doctor, Software Engineer, IAS officer…" aria-describedby="goalPlannerHelp">
+          </label>
+          <label class="goal-field" for="roadmapEducationLevel">
+            <span>My current education level</span>
+            <select id="roadmapEducationLevel" name="roadmapEducationLevel">
+              <option value="">Choose current level (optional)</option>
+              <option value="no_formal_education">No formal education</option>
+              <option value="primary_1_5">Class 1–5</option>
+              <option value="middle_6_8">Class 6–8</option>
+              <option value="secondary_9_10">Class 9–10</option>
+              <option value="higher_secondary_11_12">Class 11–12</option>
+              <option value="diploma_polytechnic">Diploma / Polytechnic / ITI</option>
+              <option value="bachelors_undergraduate">Bachelor’s / Undergraduate</option>
+              <option value="masters_postgraduate">Master’s / Postgraduate</option>
+              <option value="phd_doctoral">PhD / Doctoral / Research</option>
+              <option value="other">Other / equivalent</option>
+            </select>
+          </label>
+          <button type="submit" class="primary-btn goal-build-btn">Build my roadmap <span>→</span></button>
+        </form>
+        <div id="roadmapStreamRow" class="roadmap-stream-row" hidden>
+          <label class="goal-field" for="roadmapStream">
+            <span>Stream / subjects (optional)</span>
+            <select id="roadmapStream" name="roadmapStream">
+              <option value="">Not selected / not sure</option>
+              <option value="pcm">Science — PCM (Physics, Chemistry, Mathematics)</option>
+              <option value="pcb">Science — PCB (Physics, Chemistry, Biology)</option>
+              <option value="pcmb">Science — PCMB</option>
+              <option value="commerce">Commerce</option>
+              <option value="arts">Arts / Humanities</option>
+              <option value="vocational">Vocational</option>
+              <option value="iti_diploma">ITI / Diploma / Technical</option>
+              <option value="other">Other / not sure</option>
+            </select>
+            <small>Shown for goals where subjects can affect the route. This is a planning check, not an official eligibility decision.</small>
+          </label>
+        </div>
+        <div id="careerGoalSearchPanel" class="career-goal-search-panel" hidden aria-label="Matching career goals"></div>
+        <div class="goal-suggestions" aria-label="Popular goal examples">
+          <span>Try an example:</span>
+          <button type="button" data-goal-preset="Software Engineer">Software Engineer</button>
+          <button type="button" data-goal-preset="Doctor">Doctor</button>
+          <button type="button" data-goal-preset="Nurse">Nurse</button>
+          <button type="button" data-goal-preset="IAS officer">IAS officer</button>
+          <button type="button" data-goal-preset="Teacher">Teacher</button>
+          <button type="button" data-goal-preset="Start a business">Start a business</button>
+        </div>
+        <p class="goal-planner-help" id="goalPlannerHelp">Only the goal is required. If you skip your education level, you’ll still get a general roadmap.</p>
+        <p id="goalRoadmapError" class="form-error" role="alert" hidden></p>
+        <div id="careerRoadmapResult" class="career-roadmap-result" hidden aria-live="polite"></div>
+      </section>
+
+<form id="profileForm" novalidate>
+        <section class="form-card">
+          <div class="form-card-title"><span class="number-icon">01</span><div><h3>Basic details</h3><p>We’ll use these details to personalize your experience.</p></div></div>
+          <div class="fields-grid">
+            <label class="field span-2"><span>Full name <b>*</b></span><input id="fullName" name="fullName" required maxlength="90" autocomplete="name" placeholder="e.g. Aditi Sharma"><small>Your name is the only mandatory field.</small></label>
+            <label class="field"><span>Date of birth</span><input id="dob" name="dob" type="date" autocomplete="bday"><small>Optional; age cut-off rules differ by opportunity.</small></label>
+            <label class="field"><span>What best describes you right now?</span><select id="currentActivity" name="currentActivity"><option value="">Choose an option (optional)</option><option value="school_student">School student</option><option value="diploma_student">Diploma / ITI student</option><option value="college_student">College / university student</option><option value="researcher">Research scholar / PhD student</option><option value="completed_studies">Completed my studies</option><option value="job_seeker">Looking for a job</option><option value="learning">Looking to learn a new skill</option><option value="other">Other / prefer not to say</option></select></label>
+            <label class="field"><span>Country</span><select id="country" name="country"><option value="India">India</option><option value="Other">Other country</option></select></label>
+            <label class="field" id="stateField"><span>State / Union Territory</span><select id="state" name="state"><option value="">Select state / UT</option></select></label>
+            <label class="field" id="districtField"><span>District</span><select id="district" name="district" disabled><option value="">Select state first</option></select><small id="districtHint">Choose a state to see its district options.</small></label>
+            <label class="field hidden" id="otherDistrictField"><span>Enter district</span><input id="otherDistrict" name="otherDistrict" maxlength="100" placeholder="Enter your district"></label>
+            <label class="field" id="cityField"><span>City / town</span><input id="city" name="city" list="citySuggestions" maxlength="100" autocomplete="address-level2" placeholder="Type your city or town"><datalist id="citySuggestions"></datalist><small>Suggestions may be available after selecting a district; you can type a place manually.</small></label>
+          </div>
+        </section>
+
+        <section class="form-card education-profile-card">
+          <div class="form-card-title"><span class="number-icon blue">02</span><div><h3>Your education level</h3><p>Choose this once. When you open Education &amp; Learning, we’ll ask only the follow-up questions that match your level.</p></div></div>
+          <div class="fields-grid">
+            <label class="field span-2"><span>Current / highest education level</span><select id="educationLevel" name="educationLevel"><option value="">Not sure yet — let me browse all education opportunities</option><option value="no_formal_education">No formal education</option><option value="primary_1_5">Primary school · Class 1–5</option><option value="middle_6_8">Middle school · Class 6–8</option><option value="secondary_9_10">Secondary · Class 9–10</option><option value="higher_secondary_11_12">Senior secondary · Class 11–12</option><option value="diploma_polytechnic">Diploma / Polytechnic / ITI</option><option value="bachelors_undergraduate">Bachelor’s / Undergraduate (UG)</option><option value="masters_postgraduate">Master’s / Postgraduate (PG)</option><option value="phd_doctoral">PhD / Doctoral / Research</option><option value="other">Other qualification / equivalent</option></select><small>Choose your current/highest qualification. In the next step, also tell us whether you are studying or completed and what you want to do next—subsections depend on both.</small></label>
+          </div>
+          <div class="form-hint-strip">Your profile can be used by Education &amp; Learning and Jobs, Careers &amp; Startups on the next screen.</div>
+        </section>
+        <div id="profileError" class="form-error" role="alert" hidden></div>
+        <div class="form-actions"><span class="privacy-note">🔒 Demo only: this profile stays in this browser; it is not sent to a server.</span><button class="primary-btn" id="nextToCategories" type="submit">Next: choose a section <span>→</span></button></div>
+      </form>
+    </section>
+
+    <section id="categoriesStep" class="step-view" hidden>
+      <div class="section-title-row">
+        <div><p class="step-kicker">STEP 2 OF 4</p><h2 id="welcomeHeading">Choose what you want to explore</h2><p class="muted">Choose Education & Learning or Jobs, Careers & Startups. Government Schemes & Services is now available as a separate section.</p></div>
+        <button type="button" class="secondary-btn" id="backToProfile">← Edit details</button>
+      </div>
+      <div id="profileSummaryChip" class="profile-summary-chip"></div>
+      <div class="category-grid">
+        <button type="button" id="educationCategory" class="category-card category-active">
+          <span class="category-symbol">🎓</span><span class="category-status live">ACTIVE NOW</span><h3>Education &amp; Learning</h3><p>Scholarships, school & college options, admissions, research and skills.</p><span class="category-bottom">Explore education <b>↗</b></span>
+        </button>
+        <button type="button" id="jobsCareerCategory" class="category-card category-active">
+          <span class="category-symbol">💼</span><span class="category-status live">ACTIVE NOW</span><h3>Jobs, Careers &amp; Startups</h3><p>Central and State Government jobs, private careers, apprenticeships and startup/business schemes.</p><span class="category-bottom">Explore jobs &amp; careers <b>↗</b></span>
+        </button>
+        <button type="button" class="category-card category-active" id="governmentSchemesCategory" aria-label="Explore Government Schemes and Services">
+          <span class="category-symbol">🏛️</span><span class="category-status live">91 RECORDS</span><h3>Government Schemes &amp; Services</h3><p>Central, State and Union Territory welfare schemes, financial benefits, pensions, citizen services and official application routes.</p><span class="category-bottom">Explore schemes <b>↗</b></span>
+        </button>
+      </div>
+      <div class="note-box"><span>i</span><p>Your profile is saved locally in this browser. Education recommendations are based on education-level overlap in a research catalogue—not an official eligibility decision.</p></div>
+    </section>
+
+    <section id="jobsCareerStep" class="step-view" hidden>
+      <div class="section-title-row">
+        <div><p class="step-kicker">CAREER EXPLORER · ACTIVE SECTION</p><h2>Jobs, Careers &amp; Startups</h2><p class="muted" id="careerIntro">Browse Government recruitment, private jobs, apprenticeships and startup/business schemes from the supplied research database.</p></div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap"><button type="button" class="secondary-btn" id="backFromJobs">← Back to sections</button><button type="button" class="secondary-btn" id="editProfileFromJobs">Edit profile</button></div>
+      </div>
+      <div id="jobsProfileSummary" class="profile-summary-chip"></div>
+      <div class="career-kpis" aria-label="Career database totals">
+        <div class="career-kpi"><strong id="careerGovernmentCount">0</strong><span>Government job records</span></div>
+        <div class="career-kpi"><strong id="careerPortalCount">0</strong><span>State / UT recruitment portals</span></div>
+        <div class="career-kpi"><strong id="careerPrivateCount">0</strong><span>Private jobs &amp; career routes</span></div>
+        <div class="career-kpi"><strong id="careerStartupCount">0</strong><span>Startup, business &amp; schemes</span></div>
+      </div>
+      <div class="career-note" id="careerNotice">Eligibility is a preliminary education-level match, not an official decision. “Listed Open” records need a fresh check on the official application page. Apprenticeship, contractual work, startup recognition, grants and repayable loans are different types of support.</div>
+      <div class="career-filters">
+        <label class="search-field"><span>⌕</span><input id="careerSearchInput" type="search" placeholder="Search exam, company, state, scheme or skill…" aria-label="Search jobs, careers and startup records"></label>
+        <label class="filter-field">Opportunity category<select id="careerTypeFilter"><option value="all">All career categories</option><option value="government_job">Government jobs</option><option value="recruitment_portal">State / UT recruitment portals</option><option value="private_job">Private jobs &amp; career routes</option><option value="startup_scheme">Startup &amp; business schemes</option></select></label>
+        <label class="filter-field">Form / record status<select id="careerStatusFilter"><option value="all">All statuses</option><option value="Open">Listed Open</option><option value="Upcoming">Upcoming</option><option value="Deadline Unknown">Deadline Unknown / Verify</option><option value="Closed">Closed</option></select></label>
+      </div>
+      <div class="career-filter-options">
+        <label><input id="careerMatchEducation" type="checkbox"> Limit to records tagged for my education level</label>
+        <label><input id="careerOnlyWithUrl" type="checkbox"> Only show records with a usable source link</label>
+      </div>
+      <div class="career-countline"><span id="careerResultCount">Loading career records…</span><span id="careerResultsScope">Status and eligibility require official-notice verification.</span></div>
+      <div id="careerResults" class="career-results-grid opportunity-grid" aria-live="polite"></div>
+      <div id="careerEmptyState" class="career-empty" hidden><strong>No matching records found</strong><p>Try another keyword or reset one of the filters.</p><button type="button" class="secondary-btn" id="resetCareerFilters">Reset filters</button></div>
+      <button type="button" class="primary-btn career-load-more" id="careerLoadMore" hidden>Load more records</button>
+    </section>
+
+    <section id="educationProfileStep" class="step-view" hidden>
+      <div class="section-title-row">
+        <div><p class="step-kicker">STEP 3 OF 4</p><h2 id="educationProfileHeading">Education profile details</h2><p class="muted" id="educationProfileIntro">Your selected education level controls which questions appear below. You can leave optional questions blank.</p></div>
+        <button type="button" class="secondary-btn" id="backFromEducationProfile">← Back to sections</button>
+      </div>
+      <div id="educationProfileContext" class="profile-summary-chip"></div>
+      <section class="form-card">
+        <div class="form-card-title"><span class="number-icon blue">🎓</span><div><h3 id="educationSpecificTitle">Details for your education level</h3><p id="educationSpecificSubtitle">Only relevant fields will be shown.</p></div></div>
+        <div id="adaptiveEducationFields" class="adaptive-area"><div class="adaptive-placeholder"><span class="placeholder-spark">✦</span><div><strong>Your form adapts to you</strong><p>Select an education level on the first step to see relevant follow-up questions.</p></div></div></div>
+      </section>
+      <div class="form-actions"><span class="privacy-note">🔒 This demo stores your profile in this browser only. Follow-up details are optional.</span><button type="button" class="primary-btn" id="continueToEducation">Next: view education opportunities <span>→</span></button></div>
+    </section>
+
+    <section id="educationStep" class="step-view" hidden>
+      <div class="section-title-row education-heading">
+        <div><p class="step-kicker">STEP 4 OF 4 · ACTIVE SECTION</p><h2>Education &amp; Learning</h2><p class="muted" id="educationPersonalizedIntro">Choose a subsection to explore opportunities relevant to your profile.</p></div>
+        <div class="heading-actions"><button type="button" class="secondary-btn" id="backToCategories">← All sections</button><button type="button" class="secondary-btn" id="editEducationProfile">Edit profile</button></div>
+      </div>
+      <div class="level-summary-banner" id="levelSummaryBanner"></div>
+      <div class="subsection-title-row"><div><h3>Explore relevant subsections</h3><p>Subsections depend on current class/degree, completion status and your next goal. Future routes are clearly labelled; confirm eligibility through the current official notice.</p></div><span class="count-chip" id="subsectionCount">Choose your level</span></div>
+      <div id="subsectionGrid" class="subsection-grid"></div>
+      <section id="transitionDatabasePanel" class="education-transition-database" hidden aria-live="polite"></section>
+      <section class="institution-finder" id="institutionFinder" hidden aria-live="polite"></section>
+      <section class="pathway-guide" id="pathwayGuide" hidden aria-live="polite"></section>
+
+      <section class="results-shell" id="resultsShell">
+        <div class="results-heading"><div><p class="step-kicker">YOUR DISCOVERY LIST</p><h3 id="resultsTitle">Opportunities for your profile</h3><p class="muted" id="resultsDescription">Start with relevant records, or browse the full research inventory.</p></div><span class="result-count" id="resultCount">0 results</span></div>
+        <div class="filter-bar">
+          <label class="search-field"><span>⌕</span><input id="searchInput" type="search" placeholder="Search scholarships, exams, skills..."></label>
+          <label class="filter-field"><span>Type</span><select id="typeFilter"><option value="all">All types</option></select></label>
+          <label class="filter-field"><span>Application status</span><select id="statusFilter"><option value="all">All statuses</option><option value="Open">Open</option><option value="Upcoming">Upcoming</option><option value="Deadline Unknown">Deadline Unknown</option><option value="Closed">Closed</option></select></label>
+          <label class="filter-field"><span>Sort by</span><select id="sortFilter"><option value="relevant">Most relevant</option><option value="title">Name A–Z</option><option value="status">Status</option></select></label>
+        </div>
+        <div id="resultNotice" class="result-notice" hidden></div>
+        <div id="opportunityResults" class="opportunity-grid"></div>
+        <div id="emptyState" class="empty-state" hidden><div>⌕</div><h3>No records found for this selection</h3><p>No research records are currently tagged to this education level and subsection. The official institution/admission links above may still help you explore a next-step route. Change the education level or reset the filters to try again.</p></div>
+      </section>
+      <div class="bottom-actions"><button type="button" class="secondary-btn" id="backToSubsections">↑ Back to subsections</button><button type="button" class="text-btn" id="resetFilters">Reset search and filters</button></div>
+    </section>
+
+    
+    <section id="governmentSchemesStep" class="step-view" hidden aria-labelledby="govSchemesHeading">
+      <div class="gov-schemes-topline">
+        <div>
+          <p class="step-kicker">GOVERNMENT SCHEMES · ACTIVE SECTION</p>
+          <h2 id="govSchemesHeading">Government Schemes &amp; Services</h2>
+          <p class="muted gov-schemes-lead">Explore the supplied Central, State and Union Territory scheme records. Use search and filters to find the right official route.</p>
+        </div>
+        <div class="gov-schemes-head-actions">
+          <button type="button" class="secondary-btn" id="backFromGovernmentSchemes">← Back to sections</button>
+          <button type="button" class="secondary-btn" id="editProfileFromGovernmentSchemes">Edit profile</button>
+        </div>
+      </div>
+      <div class="gov-schemes-summary-note"><span class="gov-note-icon">i</span><span>“Apply” means the supplied research lists an application route—not that every person qualifies or that a fresh application window is currently open. Check eligibility, dates and official instructions before applying.</span></div>
+      <div class="gov-schemes-kpis" aria-label="Scheme totals">
+        <article class="gov-kpi"><span class="gov-kpi-label">Total records</span><strong id="govKpiTotal">91</strong><small>From 6 supplied files</small></article>
+        <article class="gov-kpi"><span class="gov-kpi-label">Central</span><strong id="govKpiCentral">24</strong><small>All-India schemes &amp; services</small></article>
+        <article class="gov-kpi"><span class="gov-kpi-label">State</span><strong id="govKpiState">47</strong><small>State government programmes</small></article>
+        <article class="gov-kpi"><span class="gov-kpi-label">Union Territory</span><strong id="govKpiUT">20</strong><small>UT schemes &amp; services</small></article>
+      </div>
+      <div class="gov-schemes-filter-panel">
+        <div class="gov-search-wrap"><label for="govSchemeSearch">Search schemes</label><div class="gov-search-box"><span aria-hidden="true">⌕</span><input id="govSchemeSearch" type="search" placeholder="Search by scheme, beneficiary, benefit, ID…" autocomplete="off"></div></div>
+        <div class="gov-filter-field"><label for="govSchemeScope">Government level</label><select id="govSchemeScope"><option value="all">All levels</option><option value="Central Government">Central Government</option><option value="State Government">State Government</option><option value="Union Territory">Union Territory</option></select></div>
+        <div class="gov-filter-field"><label for="govSchemeState">State / UT</label><select id="govSchemeState"><option value="all">All States / UTs</option></select></div>
+        <div class="gov-filter-field"><label for="govSchemeStatus">Application status</label><select id="govSchemeStatus"><option value="all">All statuses</option><option value="Apply">Apply</option><option value="Available">Available</option><option value="Details Needed">Details Needed</option><option value="Closed">Closed</option><option value="Not Eligible">Not Eligible</option></select></div>
+        <div class="gov-filter-field"><label for="govSchemeCategory">Scheme category</label><select id="govSchemeCategory"><option value="all">All categories</option></select></div>
+        <button type="button" class="gov-reset-btn" id="resetGovSchemeFilters">Reset filters</button>
+      </div>
+      <div class="gov-results-row"><div><strong id="govSchemeResultCount">91 schemes</strong><span id="govSchemeResultCaption"> · Sorted by supplied records</span></div><span class="gov-source-count">Official links are opened in a new tab</span></div>
+      <div id="govSchemeGrid" class="gov-scheme-grid" aria-live="polite"></div>
+      <div id="govSchemeEmpty" class="gov-empty-state" hidden><div>⌕</div><h3>No matching schemes found</h3><p>Try another keyword or reset the filters.</p></div>
+      <div class="gov-loadmore-row"><button type="button" id="loadMoreGovSchemes" class="gov-loadmore-btn">Load more schemes</button></div>
+      <details class="gov-source-details"><summary>About this dataset &amp; included source files</summary><p>The six supplied text files are retained in <code>window.GOVERNMENT_SCHEMES_DATA.source_documents</code>. Each displayed record also keeps its original source text. No existing Opportunity Finder records were overwritten or removed.</p><div id="govSourceFileList" class="gov-source-file-list"></div></details>
+    </section>
+    <div id="govSchemeModal" class="gov-scheme-modal" hidden role="dialog" aria-modal="true" aria-labelledby="govModalTitle">
+      <div class="gov-scheme-modal-backdrop" data-close-gov-modal></div>
+      <div class="gov-scheme-modal-panel"><div class="gov-modal-head"><div><span id="govModalScope" class="gov-modal-eyebrow"></span><h2 id="govModalTitle"></h2><p id="govModalId" class="gov-modal-id"></p></div><button type="button" id="closeGovSchemeModal" class="gov-modal-close" aria-label="Close details">×</button></div>
+        <div id="govModalBody" class="gov-modal-body"></div>
+      </div>
+    </div>
+
+    <footer class="footer"><div><strong>Opportunity Finder</strong><p>Tell me what I can do next.</p></div><div class="footer-note">Research snapshot: 24 Oct 2026 · Profile-filtered research routes · current-cycle status and eligibility must be checked at official sources</div></footer>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <div id="detailModal" class="modal-backdrop" hidden>
+    <section class="detail-modal" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
+      <div class="modal-top"><div><p class="step-kicker">OPPORTUNITY DETAILS</p><h2 id="detailTitle">Opportunity title</h2><p id="detailMeta" class="muted"></p></div><button id="closeModal" class="modal-close" type="button" aria-label="Close details">×</button></div>
+      <div id="detailContent" class="detail-content"></div>
+      <div class="modal-actions"><p>Always confirm current eligibility, dates and instructions on the official source.</p><button id="closeModalBottom" class="primary-btn" type="button">Close details</button></div>
+    </section>
+  </div>
+  <script src="assets/js/data/05-transition-research-additions.js"></script>
+<script src="assets/js/data/06-jobs-careers-routing.js"></script>
+<script id="careerGoalCatalogueData" src="assets/js/data/07-career-goal-catalogue.js"></script>
+<script src="assets/js/app.js"></script>
+
+
+
+
+<script id="governmentSchemesDataAndController" src="assets/js/government-schemes.js"></script>
+
+
+<script id="visualRefreshNavigation" src="assets/js/navigation.js"></script>
+
+
+<script id="opportunityFinderDynamicLogos" src="assets/js/logo-enhancements.js"></script>
+
+</body></html>
